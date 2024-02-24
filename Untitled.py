@@ -1,145 +1,34 @@
-#!/usr/bin/env python
-# coding: utf-8
 
-# In[1]:
 
 
 import numpy as np
-
-
-# In[2]:
-
-
 import pandas as pd
-
-
-# In[3]:
-
-
 import matplotlib as pyplot
-
-
-# In[4]:
-
-
 import seaborn as sns
-
-
-# In[5]:
-
-
 df=pd.read_csv("retail_sales_dataset.csv")
-
-
-# In[6]:
-
-
 df.head()
-
-
-# In[7]:
-
-
 df.shape
-
-
-# In[8]:
-
-
 df.describe()
-
-
-# In[9]:
-
-
 null_values = df.isnull().sum()
-
-
-# In[10]:
-
-
 print(null_values)
-
-
-# In[11]:
-
-
 duplicate_rows = df[df.duplicated()]
-
-
-# In[12]:
-
-
 print(duplicate_rows)
-
-
-# In[13]:
-
-
 df.drop_duplicates(inplace=True)
-
-
-# In[14]:
-
-
 df.describe()
-
-
-# In[15]:
-
-
 df.shape
-
-
-# In[16]:
-
-
 df.head()
-
-
-# In[17]:
-
-
 mean_values_totalamount = df["Total Amount"].mean()
-
-
-# In[18]:
-
-
 print(mean_values_totalamount)
-
-
-# In[19]:
-
 
 median_values_totalamount=df["Total Amount"].median()
 
-
-# In[20]:
-
-
 mode_values_age=df["Age"].mode()[0]
-
-
-# In[21]:
-
-
 print(mode_values_age)
-
-
-# In[22]:
-
-
 mode_values_totalamount=df["Total Amount"].mode()[0]
-
-
-# In[23]:
-
-
 print(mode_values_totalamount)
 
 
-# In[24]:
+
 
 
 df['Date'] = pd.to_datetime(df['Date'])
